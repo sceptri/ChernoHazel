@@ -15,7 +15,7 @@ CXX           = g++
 DEFINES       = -DQT_QML_DEBUG
 CFLAGS        = -pipe -g -Wall -W -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -g -std=gnu++11 -Wall -W -fPIC $(DEFINES)
-INCPATH       = -I../../../Sandbox -I. -I/home/sceptri/Dev/Programs/Qt/5.11.2/gcc_64/mkspecs/linux-g++
+INCPATH       = -I../../../Sandbox -I. -I../../../Hazel/src/headers -I/home/sceptri/Dev/Programs/Qt/5.11.2/gcc_64/mkspecs/linux-g++
 QMAKE         = /home/sceptri/Dev/Programs/Qt/5.11.2/gcc_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -225,7 +225,6 @@ DIST          = /home/sceptri/Dev/Programs/Qt/5.11.2/gcc_64/mkspecs/features/spe
 		/home/sceptri/Dev/Programs/Qt/5.11.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/sceptri/Dev/Programs/Qt/5.11.2/gcc_64/mkspecs/features/toolchain.prf \
 		/home/sceptri/Dev/Programs/Qt/5.11.2/gcc_64/mkspecs/features/default_pre.prf \
-		/home/sceptri/Dev/Dev/Hazel/hazelheaders.pri \
 		/home/sceptri/Dev/Programs/Qt/5.11.2/gcc_64/mkspecs/features/resolve_config.prf \
 		/home/sceptri/Dev/Programs/Qt/5.11.2/gcc_64/mkspecs/features/default_post.prf \
 		/home/sceptri/Dev/Programs/Qt/5.11.2/gcc_64/mkspecs/features/qml_debug.prf \
@@ -236,7 +235,7 @@ DIST          = /home/sceptri/Dev/Programs/Qt/5.11.2/gcc_64/mkspecs/features/spe
 		/home/sceptri/Dev/Programs/Qt/5.11.2/gcc_64/mkspecs/features/exceptions.prf \
 		/home/sceptri/Dev/Programs/Qt/5.11.2/gcc_64/mkspecs/features/yacc.prf \
 		/home/sceptri/Dev/Programs/Qt/5.11.2/gcc_64/mkspecs/features/lex.prf \
-		/home/sceptri/Dev/Dev/Sandbox/Sandbox.pro /home/sceptri/Dev/Dev/QtWorkspace/ChernoHazelEngine/Hazel/../Hazel/src/headers/*.h ../../../Sandbox/src/sources/Application.cpp
+		/home/sceptri/Dev/Dev/Sandbox/Sandbox.pro  ../../../Sandbox/src/sources/Application.cpp
 QMAKE_TARGET  = Sandbox
 DESTDIR       = 
 TARGET        = Sandbox
@@ -421,7 +420,6 @@ Makefile: ../../../Sandbox/Sandbox.pro /home/sceptri/Dev/Programs/Qt/5.11.2/gcc_
 		/home/sceptri/Dev/Programs/Qt/5.11.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/sceptri/Dev/Programs/Qt/5.11.2/gcc_64/mkspecs/features/toolchain.prf \
 		/home/sceptri/Dev/Programs/Qt/5.11.2/gcc_64/mkspecs/features/default_pre.prf \
-		../../../Hazel/hazelheaders.pri \
 		/home/sceptri/Dev/Programs/Qt/5.11.2/gcc_64/mkspecs/features/resolve_config.prf \
 		/home/sceptri/Dev/Programs/Qt/5.11.2/gcc_64/mkspecs/features/default_post.prf \
 		/home/sceptri/Dev/Programs/Qt/5.11.2/gcc_64/mkspecs/features/qml_debug.prf \
@@ -607,7 +605,6 @@ Makefile: ../../../Sandbox/Sandbox.pro /home/sceptri/Dev/Programs/Qt/5.11.2/gcc_
 /home/sceptri/Dev/Programs/Qt/5.11.2/gcc_64/mkspecs/features/exclusive_builds.prf:
 /home/sceptri/Dev/Programs/Qt/5.11.2/gcc_64/mkspecs/features/toolchain.prf:
 /home/sceptri/Dev/Programs/Qt/5.11.2/gcc_64/mkspecs/features/default_pre.prf:
-../../../Hazel/hazelheaders.pri:
 /home/sceptri/Dev/Programs/Qt/5.11.2/gcc_64/mkspecs/features/resolve_config.prf:
 /home/sceptri/Dev/Programs/Qt/5.11.2/gcc_64/mkspecs/features/default_post.prf:
 /home/sceptri/Dev/Programs/Qt/5.11.2/gcc_64/mkspecs/features/qml_debug.prf:

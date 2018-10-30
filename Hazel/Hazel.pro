@@ -28,10 +28,6 @@ SOURCES += \
 HEADERS += \
     src/headers/hazel.h
 
-OTHER_FILES += \
-    hazelheaders.pri
-
-
 unix {
     target.path = /usr/lib
     INSTALLS += target

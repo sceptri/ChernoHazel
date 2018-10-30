@@ -6,7 +6,8 @@ CONFIG -= qt
 SOURCES += \
     src/sources/Application.cpp
 
-include($$PWD/../Hazel/hazelheaders.pri)
+INCLUDEPATH += \
+    $$PWD/../Hazel/src/headers
 
 LIBS += \
     -L$$OUT_PWD/../Hazel/ -lHazel

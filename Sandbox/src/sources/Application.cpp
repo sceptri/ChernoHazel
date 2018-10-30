@@ -1,4 +1,4 @@
-#include "../Hazel/src/headers/hazel.h"
+#include "hazel.h"
 
 int main()
 {
