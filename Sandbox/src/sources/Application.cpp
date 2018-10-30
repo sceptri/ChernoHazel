@@ -2,6 +2,8 @@
 
 int main()
 {
+    //Testing git via Qt Creator
+
     Hazel::Print();
     Hazel::Show();
 
