@@ -23,12 +23,24 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    src/sources/hazel.cpp
+    src/sources/Application.cpp
 
 HEADERS += \
-    src/headers/hazel.h
+    src/headers/Application.h \
+    src/headers/Core.h \
+    Hazel.h \
+    src/headers/EntryPoint.h
+
+INCLUDEPATH += src/headers \
 
 unix {
     target.path = /usr/lib
     INSTALLS += target
+}
+
+
+win32 {
+    DEFINES += \
+        HZ_PLATFORM_WINDOWS \
+        HZ_BUILD_DLL
 }

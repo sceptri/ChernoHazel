@@ -4,10 +4,15 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-    src/sources/Application.cpp
+    src/sources/SandboxApp.cpp
 
 INCLUDEPATH += \
-    $$PWD/../Hazel/src/headers
+    $$PWD/../Hazel/
 
 LIBS += \
     -L$$OUT_PWD/../Hazel/ -lHazel
+
+win32 {
+    DEFINES += \
+        HZ_PLATFORM_WINDOWS \
+}
