@@ -8,6 +8,7 @@ QT       -= core gui
 
 TARGET = Hazel
 TEMPLATE = lib
+CONFIG += c++1z
 
 DEFINES += HAZEL_LIBRARY
 
@@ -23,15 +24,21 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    src/sources/Application.cpp
+    src/sources/Application.cpp \
+    src/sources/Log.cpp
 
 HEADERS += \
     src/headers/Application.h \
     src/headers/Core.h \
     Hazel.h \
-    src/headers/EntryPoint.h
+    src/headers/EntryPoint.h \
+    src/headers/Log.h
 
-INCLUDEPATH += src/headers \
+INCLUDEPATH += \
+    src/headers \
+    $$PWD/vendor/spdlog/include \
+
+message($$PWD)
 
 unix {
     target.path = /usr/lib

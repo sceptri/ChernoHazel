@@ -1,7 +1,8 @@
-#pragma once
 #ifndef APPLICATION_H
-    #define APPLICATION_H
-#endif
+#   define APPLICATION_H
+
+#pragma once
+
 
 #include "Core.h"
 
@@ -19,3 +20,6 @@ namespace Hazel
     //To be defined in CLIENT
     Application* CreateApplication();
 }
+
+#endif
+

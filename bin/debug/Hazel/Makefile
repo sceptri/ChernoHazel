@@ -14,8 +14,8 @@ CC            = gcc
 CXX           = g++
 DEFINES       = -DHAZEL_LIBRARY -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG
 CFLAGS        = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-CXXFLAGS      = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I../../../Hazel -I. -I../../../Hazel/src/headers -I/home/sceptri/Programs/Qt/5.11.2/gcc_64/mkspecs/linux-g++
+CXXFLAGS      = -pipe -g -std=gnu++1z -Wall -W -D_REENTRANT -fPIC $(DEFINES)
+INCPATH       = -I../../../Hazel -I. -I../../../Hazel/src/headers -I../../../Hazel/vendor/spdlog/include -I/home/sceptri/Programs/Qt/5.11.2/gcc_64/mkspecs/linux-g++
 QMAKE         = /home/sceptri/Programs/Qt/5.11.2/gcc_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -50,8 +50,10 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../../../Hazel/src/sources/Application.cpp 
-OBJECTS       = Application.o
+SOURCES       = ../../../Hazel/src/sources/Application.cpp \
+		../../../Hazel/src/sources/Log.cpp 
+OBJECTS       = Application.o \
+		Log.o
 DIST          = /home/sceptri/Programs/Qt/5.11.2/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/sceptri/Programs/Qt/5.11.2/gcc_64/mkspecs/common/unix.conf \
 		/home/sceptri/Programs/Qt/5.11.2/gcc_64/mkspecs/common/linux.conf \
@@ -240,7 +242,9 @@ DIST          = /home/sceptri/Programs/Qt/5.11.2/gcc_64/mkspecs/features/spec_pr
 		/home/sceptri/Dev/Hazel/Hazel.pro src/headers/Application.h \
 		src/headers/Core.h \
 		Hazel.h \
-		src/headers/EntryPoint.h ../../../Hazel/src/sources/Application.cpp
+		src/headers/EntryPoint.h \
+		src/headers/Log.h ../../../Hazel/src/sources/Application.cpp \
+		../../../Hazel/src/sources/Log.cpp
 QMAKE_TARGET  = Hazel
 DESTDIR       = 
 TARGET        = libHazel.so.1.0.0
@@ -688,6 +692,33 @@ compiler_clean:
 Application.o: ../../../Hazel/src/sources/Application.cpp ../../../Hazel/src/headers/Application.h \
 		../../../Hazel/src/headers/Core.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Application.o ../../../Hazel/src/sources/Application.cpp
+
+Log.o: ../../../Hazel/src/sources/Log.cpp ../../../Hazel/src/headers/Log.h \
+		../../../Hazel/src/headers/Core.h \
+		../../../Hazel/vendor/spdlog/include/spdlog/spdlog.h \
+		../../../Hazel/vendor/spdlog/include/spdlog/common.h \
+		../../../Hazel/vendor/spdlog/include/spdlog/tweakme.h \
+		../../../Hazel/vendor/spdlog/include/spdlog/details/null_mutex.h \
+		../../../Hazel/vendor/spdlog/include/spdlog/fmt/fmt.h \
+		../../../Hazel/vendor/spdlog/include/spdlog/fmt/bundled/core.h \
+		../../../Hazel/vendor/spdlog/include/spdlog/fmt/bundled/format.h \
+		../../../Hazel/vendor/spdlog/include/spdlog/fmt/bundled/format-inl.h \
+		../../../Hazel/vendor/spdlog/include/spdlog/details/registry.h \
+		../../../Hazel/vendor/spdlog/include/spdlog/details/periodic_worker.h \
+		../../../Hazel/vendor/spdlog/include/spdlog/logger.h \
+		../../../Hazel/vendor/spdlog/include/spdlog/formatter.h \
+		../../../Hazel/vendor/spdlog/include/spdlog/details/log_msg.h \
+		../../../Hazel/vendor/spdlog/include/spdlog/details/os.h \
+		../../../Hazel/vendor/spdlog/include/spdlog/sinks/sink.h \
+		../../../Hazel/vendor/spdlog/include/spdlog/details/pattern_formatter.h \
+		../../../Hazel/vendor/spdlog/include/spdlog/details/fmt_helper.h \
+		../../../Hazel/vendor/spdlog/include/spdlog/details/logger_impl.h \
+		../../../Hazel/vendor/spdlog/include/spdlog/sinks/wincolor_sink.h \
+		../../../Hazel/vendor/spdlog/include/spdlog/details/console_globals.h \
+		../../../Hazel/vendor/spdlog/include/spdlog/sinks/ansicolor_sink.h \
+		../../../Hazel/vendor/spdlog/include/spdlog/version.h \
+		../../../Hazel/vendor/spdlog/include/spdlog/sinks/stdout_color_sinks.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Log.o ../../../Hazel/src/sources/Log.cpp
 
 ####### Install
 
